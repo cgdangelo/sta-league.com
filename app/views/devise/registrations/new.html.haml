@@ -1,17 +1,20 @@
 %h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form-horizontal" }) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
+  .control-group
+    = f.label :email, :class => "control-label"
+    .controls
+      = f.email_field :email, :autofocus => true, :placeholder => "Email"
+  .control-group
+    = f.label :password, :class => "control-label"
+    .controls
+      = f.password_field :password, :placeholder => "Password"
+  .control-group
+    = f.label :password_confirmation, :class => "control-label"
+    .controls
+      = f.password_field :password_confirmation, :placeholder => "Password"
+  .form-actions
+    = f.submit "Sign up", :class => "btn btn-primary"
+
 = render "devise/shared/links"
