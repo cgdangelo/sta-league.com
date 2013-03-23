@@ -5,15 +5,31 @@
   .control-group
     = f.label :email, :class => "control-label"
     .controls
-      = f.email_field :email, :autofocus => true, :placeholder => "Email"
+      = f.email_field :email, :autofocus => true, :placeholder => "Email", :required => true
   .control-group
     = f.label :password, :class => "control-label"
     .controls
-      = f.password_field :password, :placeholder => "Password"
+      = f.password_field :password, :placeholder => "Password", :required => true
   .control-group
     = f.label :password_confirmation, :class => "control-label"
     .controls
-      = f.password_field :password_confirmation, :placeholder => "Password"
+      = f.password_field :password_confirmation, :placeholder => "Password", :required => true
+  .control-group
+    = f.label :first_name, :class => "control-label"
+    .controls
+      = f.text_field :first_name, :placeholder => "First Name", :required => true
+  .control-group
+    = f.label :last_name, :class => "control-label"
+    .controls
+      = f.text_field :last_name, :placeholder => "Last Name", :required => true
+  .control-group
+    = f.label :alias, :class => "control-label"
+    .controls
+      = f.text_field :alias, :placeholder => "Alias", :required => true
+  .control-group
+    = f.label :dob, :class => "control-label"
+    .controls
+      %input{ :type => "date", :name => "dob", :required => true }
   .form-actions
     = f.submit "Sign up", :class => "btn btn-primary"
 
