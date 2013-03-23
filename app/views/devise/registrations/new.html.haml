@@ -29,7 +29,7 @@
   .control-group
     = f.label :dob, :class => "control-label"
     .controls
-      %input{ :type => "date", :name => "dob", :required => true }
+      = date_select :user, :dob, { :start_year => 1900, :end_year => Time.now.year }, :class => "user-dob"
   .form-actions
     = f.submit "Sign up", :class => "btn btn-primary"
 
