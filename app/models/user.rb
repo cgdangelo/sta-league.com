@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :alias, :first_name, :last_name
+                  :alias, :first_name, :last_name, :dob
 
   has_and_belongs_to_many :roles
 
